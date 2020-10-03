@@ -1,7 +1,8 @@
 import * as React from "react";
 import { SearchBar } from "./SearchBar";
+import { IUnreadCountListType } from '../OutlookTypes'
 interface ILeftNavFoldersProps {
-  unreadCount: number
+  unreadCountList: IUnreadCountListType
 }
 interface ILeftNavFoldersState {
   searchKey:string

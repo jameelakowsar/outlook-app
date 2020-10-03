@@ -1,7 +1,8 @@
 import * as React from "react";
-import { ShortMail } from './ShortMail'
-import { Mail } from './Mail'
+import { ShortMail } from "./ShortMail";
+import { Mail } from "./Mail";
 import { ISingleMailDataSet } from "../OutlookTypes";
+import FilterDropdown from "./FilterDropdown";
 
 interface IMailsListProps {
   mailsData: ISingleMailDataSet[];
@@ -23,8 +24,8 @@ export class MailsList extends React.Component<
             <div className="items-headers">
               <div className="header-new">
                 <i className="fa fa-arrow-circle-o-up" aria-hidden="true" />
-                <span className="header-2-span">New |</span>
-                <i className="fa fa-chevron-down" aria-hidden="true" />
+                <span className="header-2-span">New</span>
+                <FilterDropdown />
               </div>
             </div>
             <div className="mark-mail">
@@ -38,7 +39,9 @@ export class MailsList extends React.Component<
                 <i className="fa fa-arrow-circle-o-up" aria-hidden="true" />
                 <span className="header-2-span">Undo</span>
               </div>
+
             </div>
+           
             <div className="mark-mail">
               <i className="fa fa-toggle-off " aria-hidden="true" />
               <span className="header-2-span">Try the beta</span>

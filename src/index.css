@@ -1,17 +1,3 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 body{
   margin:0px;
   font-family: sans-serif;
@@ -156,15 +142,19 @@ form{
   align-items: center;
 }
 .list-items-cotainer{
-  padding-left: 20px;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
 .list-items{    
   display: flex;
-  flex-direction: column;
-  margin-top: 20px;
+  flex-direction: row;
+  padding: 10px 0px 10px 20px;
+  margin: 2px 0px;
+  border-left: 4px solid blue;
+}
+.list-items:hover .icons-section-wrapper .fa-flag-o{
+  color: red;
 }
 .span2{
   color: cornflowerblue;
@@ -176,4 +166,16 @@ form{
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.list-border{
+  border-bottom: 1px solid #dcdcdc;
+}
+.list-items-wrapper{
+  width: calc(100% - 40px);
+}
+.icons-section-wrapper{
+  width: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  flex-direction: column;
+}
