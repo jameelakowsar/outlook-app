@@ -1,19 +1,22 @@
 import * as React from "react";
-
-export class LeftNavMailFolders extends React.Component<{}, {}> {
+import { SearchBar } from "./SearchBar";
+interface ILeftNavFoldersProps {
+  unreadCount: number
+}
+interface ILeftNavFoldersState {
+  searchKey:string
+}
+export class LeftNavMailFolders extends React.Component<ILeftNavFoldersProps, ILeftNavFoldersState> {
+  constructor(props: ILeftNavFoldersProps){
+    super(props);
+    this.state = {
+      searchKey:'',
+    };
+  }
   public render():JSX.Element {
     return (
         <div className="section1">
-          <form className="example">
-            <input
-              type="text"
-              placeholder="Search mail and people"
-              name="search"
-            />
-            <button type="submit">
-              <i className="fa fa-search" />
-            </button>
-          </form>
+          <SearchBar onSearch={this.onSearch} />
           <div className="menu-section">
             <div className="sectio-header1">
               <i className="fa fa-chevron-up" aria-hidden="true" />
@@ -30,5 +33,12 @@ export class LeftNavMailFolders extends React.Component<{}, {}> {
           </div>
         </div>
     );
+  }
+
+  private onSearch = (searchValue:string) => {
+    this.setState({ searchKey:searchValue })
+    // redux call
+    // update router
+    // update mails list
   }
 }

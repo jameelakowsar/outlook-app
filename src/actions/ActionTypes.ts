@@ -1,0 +1,1 @@
+export const STORE_INBOX_DATA = 'STORE_INBOX_DATA';
